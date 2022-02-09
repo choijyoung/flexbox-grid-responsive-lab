@@ -37,7 +37,7 @@ main {
 	background-color: white;
 }
 
-main > #status {
+#status {
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 12px;
@@ -51,16 +51,16 @@ main > img {
 	border-radius: 50%;
 }
 
-main > #occupation {
+#occupation {
 	background-color: whitesmoke;
 	padding: 3px 0;
 }
 
-main > #brand {
+#brand {
 	display: none;
 }
 
-main > #contact {
+#contact {
 	display: flex;
 	height: 60px;
 }
@@ -89,7 +89,11 @@ main > #contact {
 		height: 350px;
 		grid-template-columns: 40% 60%;
 		grid-template-rows: auto auto auto auto;
-		grid-template-areas: "status name" "img occupation" "img brand" "contact offer";
+		grid-template-areas: 
+		"status name" 
+		"img occupation" 
+		"img brand" 
+		"contact offer";
 	}
 	main > #status {
 		display: flex;
@@ -136,5 +140,7 @@ main > #contact {
 	#occupation {
 		background-color: whitesmoke;
 		padding: 0 20px;
+	
 	}
 }
+/* Try to use margin 0 and height/width 100% more often to fix spacing problems. */
