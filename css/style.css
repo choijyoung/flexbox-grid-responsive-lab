@@ -1,142 +1,140 @@
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
+*,
+/* All elements*/ *::before,
+/* All ::before pseudo-elements */ *::after {
+	/* All ::after pseudo-elements */
+	/* height & width will now include border & padding by default
      but can be over-ridden as needed */
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 /* resets font size to be 62.5% of the user preference - 
    in most browser configurations this will be 10px */
 :root {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  background-color: gray;
-/* Use a system font, if none are available use an available sans-sarif   font */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+	background-color: gray;
+	/* Use a system font, if none are available use an available sans-sarif   font */
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		"Helvetica Neue", sans-serif;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
 main {
-  width: 320px;
-  text-align: center;
-  font-size: 1.5em;
-  background-color: white; 
+	width: 320px;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: white;
 }
 
 main > #status {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 12px;
-  margin-top: 4px;
-  color: lightgrey;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 12px;
+	margin-top: 4px;
+	color: lightgrey;
 }
 
 main > img {
-  margin: auto;
-  border: 5px solid palegreen;
-  border-radius: 50%;
+	margin: auto;
+	border: 5px solid palegreen;
+	border-radius: 50%;
 }
 
 main > #occupation {
-  background-color: whitesmoke;
-  padding: 3px 0;
+	background-color: whitesmoke;
+	padding: 3px 0;
 }
 
 main > #brand {
-  display: none;
+	display: none;
 }
 
 main > #contact {
-  display: flex;
-  height: 60px;
+	display: flex;
+	height: 60px;
 }
 
 #contact > p {
-  height: 50px;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 50px;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #contact > p:first-child {
-  background-color: palegreen;
+	background-color: palegreen;
 }
 
 #contact > p:last-child {
-  background-color: green;
+	background-color: green;
 }
 
 @media only screen and (min-width: 768px) {
-  main {
-    display: grid;
-    text-align: left;
-    width: 750px;
-    height: 350px;
-    grid-template-columns: 40% 60%;
-    grid-template-rows:auto auto auto auto;
-    grid-template-areas: 
-    "status name"
-    "img occupation"
-    "img brand" 
-    "contact offer";
+	main {
+		display: grid;
+		text-align: left;
+		width: 750px;
+		height: 350px;
+		grid-template-columns: 40% 60%;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: "status name" "img occupation" "img brand" "contact offer";
+	}
+	main > #status {
+		display: flex;
+		justify-content: flex-start;
+		margin-left: 20px;
+	}
 
-  }
-  main > #status {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 20px;
-  }
+	#name {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-  #name {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+	main > img {
+		display: grid;
+		height: 180px;
+		grid-area: img;
+	}
+	main > #brand {
+		display: grid;
+	}
 
-  main > img {
-    display: grid;
-    height: 180px;
-    grid-area: img;
-  }
-  main > #brand {
-    display: grid;
-  }
+	main > #occupation {
+		display: grid;
+		grid-area: occupation;
+		padding: 0 20px;
+	}
 
-  main > #occupation {
-    display: grid;
-    grid-area: occupation;
-    padding: 0 20px
-  }
+	#brand {
+		color: lightslategray;
+		padding-left: 5px;
+		border-left: 5px solid green;
+	}
 
+	main > #contact {
+		display: flex;
+		margin-top: 55px;
+		width: 50% 50%;
+		grid-area: contact;
+	}
 
-  #brand {
-    color: lightslategray;
-    padding-left: 5px;
-    border-left: 5px solid green;
-  }
-
-  main > #contact {
-    display: flex;
-    margin-top: 55px;
-    width: 50% 50%;
-    grid-area: contact;
-  }
-
-  #name, #brand, #offer, #occupation {
-    background-color: whitesmoke;
-    padding:0 20px;
-  }
+	#name,
+	#brand,
+	#offer,
+	#occupation {
+		background-color: whitesmoke;
+		padding: 0 20px;
+	}
 }
